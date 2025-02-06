@@ -1,5 +1,6 @@
-## The code stimulated by the
-
+# The code stimulated by the creation of the GIFs from Blender software
+# Since blender does not provide the option to create GIFs directly, I had to create a script to do it from the pngs
+# The code is simple and uses the PIL library to create the GIFs
 from PIL import Image
 import os
 

@@ -1,0 +1,1 @@
+This image is taken from the following [source](https://www.reddit.com/r/MemeRestoration/comments/k8f4tj/one_does_not_simply_remaster_memes_in_4k_3840x1609/)
