@@ -17,6 +17,7 @@ from PyQt5.QtWidgets import (
 from PyQt5.QtGui import QPixmap, QFont
 from PyQt5.QtCore import Qt
 from PIL import Image, ImageFont, ImageDraw
+import numpy as np
 
 
 class MemeEditor(QMainWindow):
@@ -158,8 +159,8 @@ class MemeEditor(QMainWindow):
         bottom_pos_full = (bottom_pos_display.x() * self.scale_factor, bottom_pos_display.y() * self.scale_factor)
 
         # Calculate full resolution font sizes by multiplying the spin box values by the scale factor
-        top_font_size_full = int(self.top_font_size_spin.value() * self.scale_factor)
-        bottom_font_size_full = int(self.bottom_font_size_spin.value() * self.scale_factor)
+        top_font_size_full = int(self.top_font_size_spin.value() * self.scale_factor * np.sqrt(2))
+        bottom_font_size_full = int(self.bottom_font_size_spin.value() * self.scale_factor * np.sqrt(2))
 
         # Try to load Impact font for full resolution; fall back to default if not available
         try:
