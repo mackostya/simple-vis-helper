@@ -45,7 +45,7 @@ class MemeEditor(QMainWindow):
         self.full_height = self.original_pixmap.height()
 
         # Downsample for display if the image is too big
-        max_display_width = 800  # adjust as needed
+        max_display_width = 1600  # adjust as needed
         if self.full_width > max_display_width:
             self.scale_factor = self.full_width / max_display_width
             self.display_pixmap = self.original_pixmap.scaledToWidth(max_display_width, Qt.SmoothTransformation)
@@ -58,8 +58,8 @@ class MemeEditor(QMainWindow):
         self.scene.addItem(self.pixmap_item)
 
         # Define positions for the text on the full-resolution image
-        top_text_full_pos = (280, 30)
-        bottom_text_full_pos = (170, self.full_height - 100)
+        top_text_full_pos = (440, 30)
+        bottom_text_full_pos = (300, self.full_height - 400)
 
         # Convert full resolution positions to display positions (divide by scale_factor)
         top_text_display_pos = (top_text_full_pos[0] / self.scale_factor, top_text_full_pos[1] / self.scale_factor)
@@ -192,6 +192,9 @@ class MemeEditor(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
+    app.setStyleSheet(
+        "QLabel{font-size: 14pt;}QLineEdit{font-size: 14pt;}QSpinBox{font-size: 14pt;}QPushButton{font-size: 14pt;}"
+    )
     editor = MemeEditor()
     editor.show()
     sys.exit(app.exec_())
