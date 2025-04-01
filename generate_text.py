@@ -2,7 +2,8 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 # Load a small, pretrained transformer model
-model_name = "distilgpt2"
+# model_name = "distilgpt2"
+model_name = "microsoft/DialoGPT-medium"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name)
 
